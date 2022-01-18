@@ -1,17 +1,14 @@
 import React, {Component} from "react";
+import Student from "./Student";
 
-
-class App extends Component{
-    render(){
-        return (
-            <React.Fragment>
-                <h1>Hello My First React App</h1>
-                <h2>Hello World</h2>
-            </React.Fragment>
-        );
-        
-    }
-}
-
+const App = () => {
+    return (
+        <div>
+            <Student name="Shiv"/>
+            <Student name="Ravi"/>
+            <Student name="Sumit"/>
+        </div>
+    );
+} 
 
 export default App;
