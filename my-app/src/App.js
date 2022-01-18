@@ -4,11 +4,12 @@ import React, {Component} from "react";
 class App extends Component{
     render(){
         return (
-            <div>
+            <React.Fragment>
                 <h1>Hello My First React App</h1>
-                <h2>World</h2>
-            </div>
+                <h2>Hello World</h2>
+            </React.Fragment>
         );
+        
     }
 }
 
