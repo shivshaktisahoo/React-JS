@@ -1,5 +1,6 @@
 import React from "react";
-import ReactDom from "react-dom";
-import App from "./App";
+import ReactDOM from "react-dom";
+import Student from "./Student";
 
-ReactDom.render(<App />, document.getElementById("root"))
+
+ReactDOM.render(<Student name="Shiv" roll={100+5} />, document.getElementById("root"));
