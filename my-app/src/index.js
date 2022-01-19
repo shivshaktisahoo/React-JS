@@ -1,6 +1,6 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM  from "react-dom";
 import Student from "./Student";
 
-
-ReactDOM.render(<Student name="Shiv" roll={101} />, document.getElementById("root"));
+// Rendering Component
+ReactDOM.render(<Student>I am Child {100+1}</Student>, document.getElementById("root"));
