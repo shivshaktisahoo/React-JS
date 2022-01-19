@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import PropTypes from "prop-types";
 import "./App.css"
 // const Student = (props) => {
 //     return(
@@ -8,6 +9,8 @@ import "./App.css"
 //         </div>
 //     );
 // }
+
+
 class Student extends Component{
     render(){
         return(
@@ -18,5 +21,11 @@ class Student extends Component{
         );
     }
 }
+Student.propTypes = {
+    name : PropTypes.string.isRequired
+};
+Student.defaultProps = {
+    name : "Anonymous User"
+};
 
 export default Student;
