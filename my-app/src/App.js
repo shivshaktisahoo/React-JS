@@ -1,24 +1,31 @@
-import React, { useState } from 'react';
+import React, {useState, useEffect} from 'react';
 
 function App(){
-  // Declaring State and destructuring Array
-  const [name, setName] = useState("Shiv");
-  const [roll, setRoll] = useState(101);
+  const [count, setCount] = useState(0);
+  const [count1, setCount1] = useState(50);
 
-  const handleClick = () => {
-    // Updating State
-    setName("Alok");
-    setRoll(105);
-  }
-  return (
+  const handleIncrement = () => {
+    setCount(count + 1);
+  };
+
+  const handleDecrement = () => {
+    setCount1(count1 - 1);
+  };
+
+  useEffect(() => {
+    console.log("Use Effect Called");
+  }, [count]);
+
+
+  return(
     <React.Fragment>
-      {/* Accessing State */}
-      <h1>Name: { name }</h1>
-      <h1>Roll: { roll }</h1>
-      <button onClick={handleClick}>Change</button>
+      <h1>Count Up : {count}</h1>
+      <button onClick={handleIncrement}>Increment</button>
+
+      <h1>Count Down : {count1}</h1>
+      <button onClick={handleDecrement}>Decrement</button>
     </React.Fragment>
   );
-
 }
 
 export default App;
