@@ -1,18 +1,14 @@
-import React from 'react';
-import useCustomCounter from './Custom';
+import React, { Component } from 'react';
+import Guest from './Guest';
+import User from './User';
 
-function App(){
-  const data = useCustomCounter();
-  const data1 = useCustomCounter();
-
-  return(
-    <React.Fragment>
-      <h1>Count Up : {data.count}</h1>
-      <button onClick={data.handleIncrement}>Increment</button>
-        {/* one custom hooks using independently */}
-      <h1>Count Up : {data1.count}</h1>
-      <button onClick={data1.handleIncrement}>Increment</button>
-    </React.Fragment>
-  );
+export default class App extends Component {
+  render() {
+    const isRegistered = this.props.consumer;
+    if (isRegistered){
+      return <User />;
+    }
+    return <Guest />;
+    
+  }
 }
-export default App;
