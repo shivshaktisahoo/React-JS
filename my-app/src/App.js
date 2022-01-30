@@ -3,12 +3,24 @@ import Guest from './Guest';
 import User from './User';
 
 export default class App extends Component {
+  state = {
+    isLoggedIn : false
+  }
+
+  clickLogin =()=>{
+    this.setState({isLoggedIn:true})
+  }
+  clickLogout =()=>{
+    this.setState({isLoggedIn:false})
+  }
+
   render() {
-    const isRegistered = this.props.consumer;
-    if (isRegistered){
-      return <User />;
+    const isLoggedIn = this.state.isLoggedIn
+    if (isLoggedIn){
+      return <User clickData={this.clickLogout}/>;
+    } 
+    else{
+      return <Guest clickData={this.clickLogin}/>;
     }
-    return <Guest />;
-    
   }
 }
