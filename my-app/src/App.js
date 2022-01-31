@@ -1,45 +1,28 @@
 import React, { Component } from 'react';
-import Guest from './Guest';
-import User from './User';
 
 export default class App extends Component {
-  state = {
-    isLoggedIn : false
-  }
-
-  clickLogin =()=>{
-    this.setState({isLoggedIn:true})
-  }
-  clickLogout =()=>{
-    this.setState({isLoggedIn:false})
-  }
-
-  // render() {
-  //   const isLoggedIn = this.state.isLoggedIn
-  //   if (isLoggedIn){
-  //     return <User clickData={this.clickLogout}/>;
-  //   } 
-  //   else{
-  //     return <Guest clickData={this.clickLogin}/>;
-  //   }
-  // }
-
-
-  // IIFE - write any JS code inside it
   render() {
-    const isLoggedIn = this.state.isLoggedIn
+    const arr = [10, 20, 30 ,40];
+    // const newArr = arr.map((num) => {
+    //   console.log("Num = ", num);
+    //   return <li>{num * 2}</li>;
+    // });
+    // console.log("OldArray = ", arr);
+    // console.log("NewArray = ", newArr);
+
+    // return (
+    //   <ul>{newArr}</ul>
+    // );
+
+
     return(
-      <div>
-        {( () => {
-            if (isLoggedIn){
-              return <User clickData={this.clickLogout}/>;
-            } 
-            else{
-              return <Guest clickData={this.clickLogin}/>;
-            }
-          } )()
+      <ul>
+        {
+          arr.map((num)=> {
+            return <li>{num * 2}</li>
+          })
         }
-      </div>
-    );
+      </ul>
+    )
   }
 }
