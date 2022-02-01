@@ -1,28 +1,23 @@
 import React, { Component } from 'react';
 
 export default class App extends Component {
+  state = {
+    users : [
+      {id : 101, name : "Shiv", password : "qw12q34"},
+      {id : 102, name : "Jack", password : "q32w12q34"},
+      {id : 103, name : "Max", password : "rerqw12q34"}
+    ],
+    isLoggedIn : false
+  }
   render() {
-    const arr = [10, 20, 30 ,40];
-    // const newArr = arr.map((num) => {
-    //   console.log("Num = ", num);
-    //   return <li>{num * 2}</li>;
-    // });
-    // console.log("OldArray = ", arr);
-    // console.log("NewArray = ", newArr);
-
-    // return (
-    //   <ul>{newArr}</ul>
-    // );
-
-
-    return(
-      <ul>
-        {
-          arr.map((num)=> {
-            return <li>{num * 2}</li>
-          })
-        }
-      </ul>
-    )
+    const newUsers = this.state.users.map((user)=>{
+      // console.log(user);
+      return <h1>Id : {user.id}  Name : {user.name}  Password : {user.password} </h1> 
+    });
+    return (
+      <div>
+        {newUsers}
+      </div>
+    );
   }
 }
