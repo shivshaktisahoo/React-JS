@@ -1,18 +1,38 @@
 import React, { Component } from 'react';
-import User from './User';
 
 export default class App extends Component {
+
+  // Type - 1
+  // render() {
+  //   const btnStyle = {
+  //     color : 'blue',
+  //     backgroundColor : 'orange',
+  //     borderRadius : "30%",
+  //     padding : "10px",
+  //     cursor : "pointer",
+  //     fontSize : "50px"
+  //   };
+  //   return (
+  //     <div>
+  //       <button style={btnStyle}>Button</button>
+  //     </div>
+  //   );
+  // }
+
+  // Type - 2(Multiple style)
   render() {
-    const arr = this.props.numbers;
-    const newArr = arr.map(num=>{
-      return <User key={num} value={num}/>
-    });
+    const txtc = {
+      color : 'blue',
+    };
+    const txts = {
+      fontSize : "80px"
+    };
     return (
       <div>
-        <ul>
-        {newArr}
-        </ul>
+        <h1 style={{...txtc, ...txts}}>Hello App</h1>
       </div>
     );
   }
+
+
 }
