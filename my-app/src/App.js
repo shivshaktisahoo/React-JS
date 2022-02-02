@@ -11,8 +11,8 @@ export default class App extends Component {
   }
   render() {
     const newUsers = this.state.users.map((user)=>{
-      // console.log(user);
-      return <h1>Id : {user.id}  Name : {user.name}  Password : {user.password} </h1> 
+      console.log(user);
+      return (<h1 key={user.id}>Id : {user.id}  Name : {user.name}  Password : {user.password} </h1> );
     });
     return (
       <div>
