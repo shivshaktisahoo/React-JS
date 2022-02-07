@@ -20,6 +20,16 @@ export default class App extends Component {
   // }
 
   // Type - 2(Multiple style)
+  // render() {
+  //   const txtc = {
+  //     color : "blue"
+  //   };
+  //   return <h1 style={{...txtc, ...{fontSize : '100px'}}}>Hello App</h1>
+  // }
+
+  
+
+  // through event state and event handling
   state = {
     change : false
   };
