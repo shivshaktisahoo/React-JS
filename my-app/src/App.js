@@ -20,18 +20,21 @@ export default class App extends Component {
   // }
 
   // Type - 2(Multiple style)
+  state = {
+    change : false
+  };
+  clickHandle = () => {
+    this.setState({change:true})
+  }
   render() {
-    const txtc = {
-      color : 'blue',
+    const btnStyle = {
+      color : "blue",
+      backgroundColor : "orange"
     };
-    const txts = {
-      fontSize : "80px"
-    };
-    return (
-      <div>
-        <h1 style={{...txtc, ...txts}}>Hello App</h1>
-      </div>
-    );
+    if (this.state.change){
+      btnStyle.backgroundColor = "white";
+    }
+    return <button onClick={this.clickHandle} style={btnStyle}>Button</button>;
   }
 
 
