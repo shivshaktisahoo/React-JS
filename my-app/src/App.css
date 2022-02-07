@@ -1,6 +1,10 @@
-.bg{
-    background-color: burlywood;
+.txt {
+    color: blue;
 }
-h1>span{
-    color: rgb(151, 9, 120);
+
+.txtr {
+    color: red;
+}
+.txtg {
+    color: green;
 }
